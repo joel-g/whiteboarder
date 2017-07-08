@@ -3,12 +3,15 @@ post '/users/login' do
   if @user == nil
     @user = User.find_by(email: params[:username])
   end
-  if User.authenticate(@user.username ,params[:password])
+  if @user == nil
+    @error = "User not found"
+    erb :index
+  elsif User.authenticate(@user.username ,params[:password])
     session[:id] = @user.id
     redirect "/"
   else
     @error = "Invalid login"
-    redirect "/"
+    erb :index
   end
 end
 

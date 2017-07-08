@@ -32,6 +32,9 @@
       <input type="submit" name="login" value="Log In" />
       </form>
     <% end %>
+    <% if defined?(@error) %>
+      <%= @error %>
+    <% end %>
   </nav>
 
 
