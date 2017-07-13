@@ -30,7 +30,8 @@
     <li>
       <%= @user.username %>
     </li>
-      <li>
+    <li><a class='nav-link' href="/interviews">interviews</a></li>
+    <li>
       <form class="logout" action='/sessions' method='POST'>
         <input type="hidden" name="_method" value="DELETE">
         <input class="nav-link link-button" type="submit" value="logout" />

@@ -1,3 +1,8 @@
+get '/interviews' do
+  pass_user
+  erb :'interviews/index'
+end
+
 get '/interviews/new' do
   if session[:id]
     pass_user
