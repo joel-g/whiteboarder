@@ -56,12 +56,20 @@
 }
 
 .index-li {
-  background-color: silver;
   display: inline-block;
   padding: 20px;
   border-radius: 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.index-list a {
+  color: #006EF4;
 }
 
 .index-list {
   margin-top: 50px;
+}
+
+.container {
+  margin: 0 auto;
 }

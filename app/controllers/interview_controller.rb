@@ -28,6 +28,6 @@ get '/interviews/:id' do
   if session[:id]
     pass_user
   end
-  @interview = Interviews.find(params[:id])
+  @interview = Interview.find(params[:id])
   erb :'interviews/show'
 end

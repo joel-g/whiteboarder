@@ -3,7 +3,11 @@
     <% @interviews.each do |int| %>
     <li class='index-li'>
       <div>
-        <strong>Whiteboard Interview #<%= int.id %></strong>
+        <% if session[:id] %>
+          <strong><a href="interviews/<%= int.id %>">Whiteboard Interview #<%= int.id %></a></strong>
+        <% else %>
+          <strong>Whiteboard Interview #<%= int.id %></strong>
+        <% end %>
       </div>
       <div>
         Applicant: <%= int.applicant.username %>
@@ -13,13 +17,6 @@
       </div>
       <div>
         Challenge: <%= int.challenge.question %>
-      </div>
-      <div>
-        <% if session[:id] %>
-          <a href="">Give Feedback</a>
-        <% else %>
-
-        <% end %>
       </div>
     </li>
     <% end %>
