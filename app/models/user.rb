@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
   validates :hashed_password, presence: true
-  has_many :feedbacks
+  has_many :feedbacks, through: :interviews
   has_many :interviews, class_name: 'Interview', foreign_key: 'applicant_id'
 
 
