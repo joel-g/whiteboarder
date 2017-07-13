@@ -1,3 +1,5 @@
 class Interview < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :interviewer, class_name: 'User', foreign_key: 'interviewer_id'
+  belongs_to :applicant, class_name: 'User', foreign_key: 'applicant_id'
+  belongs_to :challenge
 end

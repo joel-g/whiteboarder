@@ -1,3 +1,4 @@
 class Challenge < ActiveRecord::Base
-  # Remember to create a migration!
+  valdiates :question, presence: true
+  belongs_to :user_id
 end

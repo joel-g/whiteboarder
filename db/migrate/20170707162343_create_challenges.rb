@@ -4,7 +4,7 @@ class CreateChallenges < ActiveRecord::Migration
       t.string :question, null: false
       t.string :solution
       t.integer :difficulty
-      t.integer :submitter_id, null: false
+      t.integer :user_id, null: false
       t.timestamps
     end
   end
