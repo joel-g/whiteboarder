@@ -5,7 +5,7 @@
     list-style:none;
     padding: 0 50px;
     text-align: right;
-    margin-top: 20px;
+    margin-top: 30px;
     font-family: helvetica;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     color: white;
@@ -49,7 +49,19 @@
   font-family: arial;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   background-color: #ffffff;
-  position: relative;
-  right: 500px;
+  position: absolute;
+  left: 50px;
+  top: 5px;
   padding: 5px;
+}
+
+.index-li {
+  background-color: silver;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.index-list {
+  margin-top: 50px;
 }

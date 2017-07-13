@@ -1,5 +1,6 @@
 get '/interviews' do
   pass_user
+  @interviews = Interview.all.order(created_at: :desc)
   erb :'interviews/index'
 end
 

@@ -1,8 +1,26 @@
 <div class="container">
-  <ul>
+  <ul class='index-list'>
     <% @interviews.each do |int| %>
-    <li>
-        int.applicant_id
+    <li class='index-li'>
+      <div>
+        <strong>Whiteboard Interview #<%= int.id %></strong>
+      </div>
+      <div>
+        Applicant: <%= int.applicant.username %>
+      </div>
+      <div>
+        Interviewer: <%= int.interviewer.username %>
+      </div>
+      <div>
+        Challenge: <%= int.challenge.question %>
+      </div>
+      <div>
+        <% if session[:id] %>
+          <a href="">Give Feedback</a>
+        <% else %>
+
+        <% end %>
+      </div>
     </li>
     <% end %>
   </div>
