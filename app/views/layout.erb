@@ -18,25 +18,34 @@
   <title></title>
 </head>
 <body>
-  <nav>
-    <% if session[:id] %>
-      <form action="/users/logout" method="POST">
-      <form action="/users/logout" method="POST" class="login">
-      <input type="submit" value="Log Out" />
-      </form>
-    <% else %>
-      <form action="/users/login" method="POST">
-      <form action="/users/login" method="POST" class="login">
-      <input type="text" name="username" placeholder="username/email" />
-      <input type="password" name="password" placeholder="password" />
-      <input type="submit" name="login" value="Log In" />
-      </form>
-    <% end %>
-    <% if defined?(@error) %>
-      <%= @error %>
-    <% end %>
-  </nav>
 
+
+  <nav>
+
+    <ul class="nav">
+      <li class="logo-li">
+        <img src="wb_banner_logo.png" class='logo'>
+      </li>
+    <% if session[:id] %>
+    <li>
+      <%= @user.username %>
+    </li>
+      <li>
+      <form class="logout" action='/sessions' method='POST'>
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="nav-link link-button" type="submit" value="logout" />
+      </form>
+    </li>
+    <% else %>
+      <li><a class='nav-link' href="/users/new">register</a></li>
+      <li><a class='nav-link' href="/sessions/new">login</a></li>
+      <% end %>
+    <li><a class='nav-link' href="/">home</a></li>
+    </ul>
+     <% if defined?(@error) %>
+       <%= @error %>
+     <% end %>
+  </nav>
 
   <%= yield %>
 </body>
