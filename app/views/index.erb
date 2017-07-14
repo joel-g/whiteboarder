@@ -5,11 +5,23 @@
       </li>
     </ul>
 
+    <p>
+      Well, hello there!
+    </p>
+    <p>
+      We're going to now talk to the GitHub API. Ready?
+      <a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>">Click here</a> to begin!</a>
+    </p>
+    <p>
+      If that link doesn't work, remember to provide your own <a href="/apps/building-integrations/setting-up-and-registering-oauth-apps/about-authorization-options-for-oauth-apps/">Client ID</a>!
+    </p>
+
+
   <div>
     <form id='interview-form' method='POST' action='/restaurants'>
-    <label for="int[name]">Applicant Username:</label>
-    <input type="text" name="int[name]">
-    <label for="int[challenge]">Challenge:</label>
+    <label for="int[applicant]">Applicant Username:</label>
+    <input type="text" name="int[applicant]">
+    <label for="int[challenge_id]">Challenge:</label>
     <select name="int[challenge]">
       <% @challenges.each do |challenge| %>
       <option value="<%= challenge.id %>"><%= challenge.title %></option>

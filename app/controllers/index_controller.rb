@@ -1,5 +1,12 @@
+# require 'sinatra'
+# require 'rest-client'
+# require 'json'
+
+CLIENT_ID = ENV['GH_BASIC_CLIENT_ID']
+CLIENT_SECRET = ENV['GH_BASIC_SECRET_ID']
+
 get '/' do
   pass_user
   @challenges = Challenge.all
-  erb :'index'
+  erb :'index', :locals => {:client_id => CLIENT_ID}
 end
