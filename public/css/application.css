@@ -57,7 +57,7 @@
 
 .index-li {
   display: inline-block;
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -71,7 +71,10 @@
 }
 
 .container {
+  border-radius: 15px;
   margin: 0 auto;
+  padding: 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .script {
