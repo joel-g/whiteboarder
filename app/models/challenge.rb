@@ -1,4 +1,7 @@
 class Challenge < ActiveRecord::Base
-  valdiates :question, presence: true
-  belongs_to :user_id
+  validates :title, presence: true
+  validates :input, presence: true
+  validates :output, presence: true
+  validates :body, presence: true
+  belongs_to :user
 end
