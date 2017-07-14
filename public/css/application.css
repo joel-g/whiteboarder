@@ -25,12 +25,12 @@
   color: #ffffff;
   text-decoration: none;
   padding: 0 10px;
+  border-radius: 15px;
 }
 
 .nav-link:hover {
   background-color: #ffffff;
   color: #006EF4;
-  padding: 10px 10px;
 }
 
 .link-button {

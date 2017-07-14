@@ -34,6 +34,20 @@ get '/callback' do
       JSON.parse(RestClient.get('https://api.github.com/user/emails',
                                 {:params => {:access_token => access_token}}))
   end
-  p params
-  erb :basic, :locals => auth_result
+  p auth_result
+  if !auth_result['email'].nil? && !auth_result['email'].empty?
+    github_user = User.find_by(email: auth_result['email'])
+    if github_user
+      @user = github_user
+      session[:id] = github_user.id
+    else
+      new_user = User.new(username: auth_result['login'], email: auth_result['email'], name: auth_result['name'], password: auth_result['id'])
+      if new_user.save
+        @user = new_user
+        session[:id] = new_user.id
+      end
+    end
+  end
+
+    erb :basic, :locals => auth_result
 end
