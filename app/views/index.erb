@@ -1,7 +1,21 @@
-<div class='container'>
-  <ul class='index-list'>
-    <li class='index-li'>
-      Make a white boarding session!
-    </li>
-  </ul>
+<div class='container new-interiew-box'>
+    <ul class='index-list'>
+      <li class='index-li script'>
+        Start a white boarding session!
+      </li>
+    </ul>
+
+  <div>
+    <form id='interview-form' method='POST' action='/restaurants'>
+    <label for="int[name]">Applicant Username:</label>
+    <input type="text" name="int[name]">
+    <label for="int[challenge]">Challenge:</label>
+    <input type="text" name="int[challenge]"><br>
+    <label for="int[address]">Address:</label>
+    <input type="text" name="int[address]"><br>
+    <input type="hidden" name="int[user_id]" value='<%= session[:id] %>'>
+    <input class='big-link' type="submit" value="Add Restaurant" />
+    </form>
+  </div>
+
 </div>

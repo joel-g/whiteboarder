@@ -62,14 +62,24 @@
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+.index-list {
+  margin: 50px 50px;
+}
+
 .index-list a {
   color: #006EF4;
 }
 
-.index-list {
-  margin-top: 50px;
-}
-
 .container {
   margin: 0 auto;
+}
+
+.script {
+  color: #006EF4;
+  background-color: white;
+}
+
+.new-interiew-box {
+  max-width: 60%;
+  background-color: #FFDB38;
 }
