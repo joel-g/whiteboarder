@@ -10,7 +10,11 @@
     <label for="int[name]">Applicant Username:</label>
     <input type="text" name="int[name]">
     <label for="int[challenge]">Challenge:</label>
-    <input type="text" name="int[challenge]"><br>
+    <select name="int[challenge]">
+      <% @challenges.each do |challenge| %>
+      <option value="<%= challenge.id %>"><%= challenge.title %></option>
+      <% end %>
+    </select>
     <label for="int[address]">Address:</label>
     <input type="text" name="int[address]"><br>
     <input type="hidden" name="int[interviewer_id]" value='<%= session[:id] %>'>
